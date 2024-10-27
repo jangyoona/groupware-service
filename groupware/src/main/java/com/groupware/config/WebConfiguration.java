@@ -1,6 +1,7 @@
 package com.groupware.config;
 
 import com.groupware.security.AuthInterceptor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.filter.OrderedCharacterEncodingFilter;
 import org.springframework.context.annotation.Bean;
@@ -11,12 +12,20 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.io.File;
 import java.util.Properties;
 
 @Configuration
 public class WebConfiguration implements WebMvcConfigurer {
+
+	@Value("naver.mail-id")
+	private String senderEmailId;
+
+	@Value("naver.mail-pw")
+	private String senderEmailPassword ;
 
 	// Mail Config
 	@Bean
@@ -24,8 +33,8 @@ public class WebConfiguration implements WebMvcConfigurer {
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 		mailSender.setHost("smtp.naver.com");
 		mailSender.setPort(465);
-		mailSender.setUsername("네이버아이디");
-		mailSender.setPassword("네이버비밀번호");
+		mailSender.setUsername(senderEmailId);
+		mailSender.setPassword(senderEmailPassword );
 		mailSender.setDefaultEncoding("UTF-8");
 		
 		Properties props = mailSender.getJavaMailProperties();
@@ -68,6 +77,28 @@ public class WebConfiguration implements WebMvcConfigurer {
 									"/account/email-check", "/account/email-checkAuthCode",
 									"/account/reset-password", "/account/id-check", "/account/email-message",
 									"/bulid/**", "/dist/**", "/docs/**", "/plugins/**");
+	}
+
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+
+		File directory = new File("/home/ubuntu/employee-photo/");
+		if (!directory.exists()) {
+			directory.mkdirs(); // 디렉토리 생성
+		}
+
+		File directory2 = new File("/home/ubuntu/user-filebox/");
+		if (!directory2.exists()) {
+			directory2.mkdirs(); // 디렉토리 생성
+		}
+
+		registry
+				.addResourceHandler("/employee-photo/**") // 웹 요청 경로
+				.addResourceLocations("file:/home/ubuntu/employee-photo/"); // 실제 파일 경로
+
+		registry
+				.addResourceHandler("/user-filebox/**") // 웹 요청 경로
+				.addResourceLocations("file:/home/ubuntu/user-filebox/"); // 실제 파일 경로
 	}
 
 

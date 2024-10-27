@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -47,6 +48,11 @@ public class MyPageController {
     @Setter(onMethod_ = { @Autowired })
     private ApprovalService approvalService; // file test
 
+    @Value("${file.employee-photo-dir}")
+    private String employeePhotoDir;
+
+    @Value("${file.user-filebox-dir}")
+    private String userFileBoxDir;
 
     @GetMapping("/my-page")
     public String myPageTestForm(HttpSession session, Model model, String keyWord, @RequestParam(name = "tab", required = false) Integer tab) {
@@ -121,10 +127,14 @@ public class MyPageController {
         EmployeeDto employee = (EmployeeDto)session.getAttribute("loginUser");
         // 사원 이미지 등록되어 있는지 확인
 
-        ServletContext application = req.getServletContext();
-        String realPath = application.getRealPath("/employee-photo");
-        String photoPath = realPath + "/" + employee.getEmpId() + ".jpg";
+//        ServletContext application = req.getServletContext();
+//        String realPath = application.getRealPath("/employee-photo");
+//        String photoPath = realPath + "/" + employee.getEmpId() + ".jpg";
+//
+//        File file = new File(photoPath);
+//        boolean photoExists = file.exists();
 
+        String photoPath = employeePhotoDir + employee.getEmpId() + ".jpg";
         File file = new File(photoPath);
         boolean photoExists = file.exists();
 
@@ -150,10 +160,12 @@ public class MyPageController {
         if (!attach.isEmpty() && attach.getOriginalFilename().length() > 0) {
 
             // 이미 등록된 사원 사진이 있는지 확인
-            ServletContext application = req.getServletContext();
-            String dir = application.getRealPath("/employee-photo");
-            String saveName = dir + "/" + employeeDetail.getEmpId() + ".jpg";
+//            ServletContext application = req.getServletContext();
+//            String dir = application.getRealPath("/employee-photo");
+//            String saveName = dir + "/" + employeeDetail.getEmpId() + ".jpg";
 
+            File dir = new File(employeePhotoDir);
+            String saveName = dir + String.valueOf(employeeDetail.getEmpId()) + ".jpg";
             File file = new File(saveName);
 
             try {
@@ -315,8 +327,8 @@ public class MyPageController {
                 String userFileName = attach.getOriginalFilename();
                 String savedFileName = Util.makeUniqueFileName(userFileName);
 
-                String dir = req.getServletContext().getRealPath("/user-filebox");
-                attach.transferTo(new File(dir, savedFileName)); // 파일 저장
+//                String dir = req.getServletContext().getRealPath("/user-filebox");
+                attach.transferTo(new File(userFileBoxDir, savedFileName)); // 파일 저장
 
                 userFile.setUserFileName(userFileName);
                 userFile.setSavedFileName(savedFileName);
@@ -340,11 +352,12 @@ public class MyPageController {
 
         UserFileBoxDto attach = myPageService.getUserFileByFileNo(fileNo);
 
-        ServletContext application = req.getServletContext();
-        String path = application.getRealPath("/user-filebox/" + attach.getSavedFileName());
+//        ServletContext application = req.getServletContext();
+//        String path = application.getRealPath("/user-filebox/" + attach.getSavedFileName());
 
         model.addAttribute("attach", attach);
-        model.addAttribute("uploadPath", path);
+        System.out.println(userFileBoxDir);
+        model.addAttribute("uploadPath", userFileBoxDir);
 
         return new UserFileDownloadView();
     }
@@ -358,8 +371,8 @@ public class MyPageController {
         }
 
         UserFileBoxDto attach = myPageService.getUserFileByFileNo(fileNo);
-        String dirPath = req.getServletContext().getRealPath("/user-filebox");
-        File file = new File(dirPath, attach.getSavedFileName());
+//        String dirPath = req.getServletContext().getRealPath("/user-filebox");
+        File file = new File(userFileBoxDir, attach.getSavedFileName());
 
         if(file.exists()){
             file.delete();

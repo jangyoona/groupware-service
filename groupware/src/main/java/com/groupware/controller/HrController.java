@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +29,9 @@ public class HrController {
 
     @Setter(onMethod_ = {@Autowired})
     private MyPageService myPageService;
+
+    @Value("${file.employee-photo-dir}")
+    private String employeePhotoDir;
 
 
     @GetMapping(path = "pages/human-resources/employee-list")
@@ -112,12 +116,12 @@ public class HrController {
 
 
         // 등록된 사원 사진이 있는지 확인
-        ServletContext application = req.getServletContext();
-        String realPath = application.getRealPath("/employee-photo");
+//        ServletContext application = req.getServletContext();
+//        String realPath = application.getRealPath("/employee-photo");
 
         List<Boolean> photoList = new ArrayList<>();
         for(int i=0; i< employees.size(); i++){
-            String photoPath = realPath + "/" + employees.get(i).getEmpId() + ".jpg";
+            String photoPath = employeePhotoDir + employees.get(i).getEmpId() + ".jpg";
             File file = new File(photoPath);
             boolean photoExists = file.exists();
             photoList.add(photoExists);
