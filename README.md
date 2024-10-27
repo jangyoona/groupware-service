@@ -88,10 +88,12 @@
 
 <hr>
 <br>
+<br>
 
 ## 👌 로그인 시연
 ![1-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/4a5c17fc-55c1-45a8-8de5-079d308ad054)
 
+<br>
 <br>
 <br>
 <br>
@@ -120,6 +122,7 @@
 <br>
 <br>
 <br>
+<br>
 
 
 # ✅ 마이페이지
@@ -131,6 +134,7 @@
 5. 로그인 기록
 6. 즐겨찾기
 
+<br>
 <br>
 <br>
 
@@ -145,6 +149,7 @@
 
 <br>
 <br>
+<br>
 <hr>
 
 ## 2️⃣ 일정관리
@@ -156,6 +161,7 @@
 
 ![풀캘린더](https://github.com/user-attachments/assets/859a14f6-8492-48c3-a319-15dde09216d5)
 
+<br>
 <br>
 <br>
 <hr>
@@ -180,17 +186,18 @@
 
 <br>
 <br>
+<br>
 <hr>
 
 # 4️⃣ 근태현황
 > * ### 개인 근태 현황 조회 및 관리자에게 상태 수정 요청 기능
 > * ### 일자, 월별, 상태별로 조건부 조회 가능
-> * ### 기본적인 채팅방 목록, 삭제, 관리 기능
 
 <br>
 
 ![image](https://github.com/user-attachments/assets/68fcee2d-7f65-4b6c-9c81-bafb32925cf7)
 
+<br>
 <br>
 <br>
 <hr>
@@ -204,6 +211,7 @@
 
 ![image](https://github.com/user-attachments/assets/57632de8-2091-41ee-b295-34eb4a9c83d1)
 
+<br>
 <br>
 <br>
 <hr>
@@ -234,13 +242,26 @@
 <br>
 <br>
 
-### 👌 시연연상
+## 👌 시연연상
 ![2_cropped-ezgif com-optimize](https://github.com/user-attachments/assets/4ebe232f-939b-4dd9-a5aa-c9cc866f7b25)
 
 <br>
 <br>
+<br>
 
 
+# ✅ 사내 연락처
+> * ### 사내 직원의 부서, 직책, 연락처, 이메일 조회 페이지
+> * ### 사번 / 이름 / 부서 / 직책으로 조건부 조회 기능
+> * ### Bookmark 버튼 클릭 시 마이페이지 즐겨찾기 페이지로 추가
 
+<br>
 
+![image](https://github.com/user-attachments/assets/03df5875-37eb-4557-b48e-5906e3317dcb)
+
+<br>
+<br>
+
+## 👌 사내 연락처_Bookmark 시연영상
+![3-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/6638f2e9-9b11-411f-827a-b04da7fc3d83)
 
