@@ -13,10 +13,10 @@
                         <div class="form-group">
                             <div class="col-9" style="margin:auto; margin-bottom:60px;">
                                 <img th:if="${photoExists}" th:src="@{'/employee-photo/' + ${ loginUser.empId } + '.jpg'}"
-                                     alt="user-image" class="img-circle img-fluid">
+                                     alt="user-image" class="img-fluid">
 
                                 <img th:unless="${photoExists}" th:src="@{/employee-photo/no_img.jpg}"
-                                     alt="default-image" class="img-circle img-fluid">
+                                     alt="default-image" class="img-fluid">
                             <span style="font-weight:bold;">[ 프로필등록/변경 ]<input type="file" name="info-attach" id="info-attach" accept="image/jpeg, image/png"></span>
                             </div>
                         </div>

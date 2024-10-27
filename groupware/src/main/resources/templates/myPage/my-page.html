@@ -80,8 +80,8 @@
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
 
-  <div th:replace="~{/modules/main-header-navbar}"></div>
-  <div th:replace="~{/modules/main-sidebar}"></div>
+  <div th:replace="~{modules/main-header-navbar}"></div>
+  <div th:replace="~{modules/main-sidebar}"></div>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -121,7 +121,7 @@
               <div class="tab-pane fade my-memo-container" id="tab2" role="tabpanel" aria-labelledby="vert-tabs-profile-tab">
                 <!-- 메모장 영역 -->
                 <div class="todo-container">
-                  <div th:replace="~{/modules/calendar}"></div>
+                  <div th:replace="~{modules/calendar}"></div>
                   <h1 style="text-align: center; margin-top: 10%;">Note</h1>
                   <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default" style="position: relative; left: 25%; width: 50%; height:60px; margin-bottom: 5%;">
                     Add
@@ -355,7 +355,7 @@
 
   </div>
 </div>
-<div th:replace="~{/modules/main-footer}"></div>
+<div th:replace="~{modules/main-footer}"></div>
 
 
 <!-- Bootstrap 4 -->

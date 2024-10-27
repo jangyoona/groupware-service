@@ -22,10 +22,10 @@
                             <div class="col-5 text-center">
 <!--                                <img src="/dist/img/user1-128x128.jpg" alt="user-avatar" class="img-circle img-fluid">-->
                                 <img th:if="${photoExists.get(employeeStat.index)}" th:src="@{'/employee-photo/' + ${ employee.empId } + '.jpg'}"
-                                     alt="user-image" class="img-circle img-fluid">
+                                     alt="user-image" class="img-fluid" style="aspect-ratio: 1 / 1; object-fit: cover;">
 
                                 <img th:unless="${photoExists.get(employeeStat.index)}" th:src="@{/employee-photo/no_img.jpg}"
-                                     alt="default-image" class="img-circle img-fluid">
+                                     alt="default-image" class="img-fluid" style="aspect-ratio: 1 / 1; object-fit: cover;">
                             </div>
                         </div>
                     </div>

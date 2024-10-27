@@ -29,8 +29,8 @@
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
-  <div th:replace="~{/modules/main-header-navbar}"></div>
-  <div th:replace="~{/modules/main-sidebar}"></div>
+  <div th:replace="~{modules/main-header-navbar}"></div>
+  <div th:replace="~{modules/main-sidebar}"></div>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -55,7 +55,7 @@
         <div class="col-md-3">
           <div>
             <a href="/mailbox/write" class="btn btn-primary btn-block mb-3">메일쓰기</a>
-            <div th:replace="~{/modules/mail-sidebar}"></div>
+            <div th:replace="~{modules/mail-sidebar}"></div>
           </div>
         </div>
         <div class="col-md-9" id="mail-list" xmlns:th="http://www.thymeleaf.org">
@@ -66,7 +66,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <div th:replace="~{/modules/main-footer}"></div>
+  <div th:replace="~{modules/main-footer}"></div>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

@@ -46,6 +46,7 @@
                                 <p class="text-sm text-muted">
                                     <i class="far fa-clock mr-1"></i>
                                     <span th:text="${#dates.format(notification.timestamp, 'YY-MM-dd HH:mm')}"></span>
+<!--                                    <span th:text="${notification.timestamp}"></span>-->
                                 </p>
                             </div>
                             <button class="btn btn-danger btn-sm delete-notification" th:data-id="${notification.notificationNo}">삭제</button>
