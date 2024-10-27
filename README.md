@@ -224,21 +224,19 @@
 ![즐겨찾기1](https://github.com/user-attachments/assets/3f7fa6aa-403a-4d0d-b154-e602cc9cfa29)
 
 <br>
-
-<h3>채팅방 생성</h3>
-  ⭐ 사용자는 상대방에게 채팅 상담을 요청할 시, 그 즉시 채팅방을 생성
-
+<br>
 <br>
 
-1. 새로운 채팅방일 경우 상대방의 welcome message가 자동 발송
-2. 기존 채팅방이 존재하는 경우 해당 채팅방으로 자동 입장
+> ### 1. 사내 연락처 페이지에서 Bookmark -> 마이페이지 즐겨찾기에 추가
+> ### 2. 즐겨찾기 내 에서도 추가 Bookmark(⭐) 기능으로 사용자 편의성 제공
+> ### 3. 즐겨찾기 사원에게 즉시 메일발송 가능하도록 사내메일과 연동
 
 <br>
-
-<h3>채팅방 나가기</h3>
-  ⭐ 사용자가 채팅방 나가기를 실행할 경우, 채팅방의 active를 변경하여 사용자에게 노출되지 않도록 설정
-
 <br>
+
+### 👌 시연연상
+![2_cropped-ezgif com-optimize](https://github.com/user-attachments/assets/4ebe232f-939b-4dd9-a5aa-c9cc866f7b25)
+
 <br>
 <br>
 
