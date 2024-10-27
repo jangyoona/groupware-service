@@ -91,7 +91,8 @@
 <br>
 
 ## 👌 로그인 시연
-![1-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/4a5c17fc-55c1-45a8-8de5-079d308ad054)
+
+![1-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/87eadacc-22f8-436f-a594-5ec83eb6eecd)
 
 <br>
 <br>
