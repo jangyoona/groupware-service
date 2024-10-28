@@ -21,10 +21,10 @@ import java.util.Properties;
 @Configuration
 public class WebConfiguration implements WebMvcConfigurer {
 
-	@Value("naver.mail-id")
+	@Value("${naver.mail-id}")
 	private String senderEmailId;
 
-	@Value("naver.mail-pw")
+	@Value("${naver.mail-pw}")
 	private String senderEmailPassword ;
 
 	// Mail Config
