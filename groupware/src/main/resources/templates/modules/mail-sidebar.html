@@ -38,7 +38,7 @@
                     <a href="#" class="nav-link">
                         <i class="fas fa-user"></i>
                     </a>
-                    <h5 class="description-header" th:text="${employeeAttd.attdStatus}"></h5>
+                    <h5 class="description-header" th:text="${employeeAttd == null ? '미출근' : employeeAttd.attdStatus}"></h5>
                     <span class="description-text">현재 근무 상태</span>
                 </div>
                 <!-- /.description-block -->

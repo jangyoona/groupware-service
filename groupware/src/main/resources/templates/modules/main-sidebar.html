@@ -35,19 +35,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../../index.html" class="nav-link">
+                            <a href="/index.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Dashboard v1</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../../index2.html" class="nav-link">
+                            <a href="/index2.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Dashboard v2</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../../index3.html" class="nav-link">
+                            <a href="/index3.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Dashboard v3</p>
                             </a>
@@ -77,33 +77,33 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/forms/approval/approval-write" class="nav-link">
+                            <a th:href="@{/forms/approval/approval-write}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>전자결재 | 작성</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/forms/approval/approval-list" class="nav-link">
+                            <a th:href="@{/forms/approval/approval-list}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>전자결재 | 문서함</p>
                             </a>
                         </li>
                         <!-- 주임 이상만볼 수 있게-->
                         <li class="nav-item">
-                            <a href="/forms/approval/approval-waiting-list" class="nav-link">
+                            <a th:href="@{/forms/approval/approval-waiting-list}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>전자결재 | 대기문서함</p>
                             </a>
                         </li>
                         <!-- -->
                         <li class="nav-item">
-                            <a href="/forms/approval/approval-form-list" class="nav-link">
+                            <a th:href="@{/forms/approval/approval-form-list}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>전자결재 | 양식리스트</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/forms/approval/approval-line-list" class="nav-link">
+                            <a th:href="@{/forms/approval/approval-line-list}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>전자결재 | 결재선 등록</p>
                             </a>
@@ -122,13 +122,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/mailbox/all" class="nav-link ">
+                            <a th:href="@{/mailbox/all}" class="nav-link ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>메일함</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/mailbox/write" class="nav-link">
+                            <a th:href="@{/mailbox/write}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>메일쓰기</p>
                             </a>
@@ -139,14 +139,14 @@
 
                 <!-- Project 관리 Start -->
                 <li class="nav-item">
-                    <a href="/schedule/list" class="nav-link">
+                    <a th:href="@{/schedule/list}" class="nav-link">
                         <p>프로젝트 관리</p>
                     </a>
                 </li>
                 <!-- Project 관리 End -->
 
                 <li class="nav-item">
-                    <a href="/board/list" class="nav-link">
+                    <a th:href="@{/board/list}" class="nav-link">
                         <p>공지사항</p>
                     </a>
                 </li>
@@ -161,13 +161,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/pages/attendance/attendance-list" class="nav-link">
+                            <a th:href="@{/pages/attendance/attendance-list}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>부서별 금일 근태</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/pages/human-resources/emp-contacts" class="nav-link">
+                            <a th:href="@{/pages/human-resources/emp-contacts}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>사원 정보 검색</p>
                             </a>
@@ -185,19 +185,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/pages/attendance/attendance-edit" class="nav-link">
+                            <a th:href="@{/pages/attendance/attendance-edit}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>근태 수정</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/account/modify?empId=24071241" class="nav-link">
+                            <a th:href="@{/account/modify?empId=24071241}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>사원 정보 수정</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/account/register" class="nav-link">
+                            <a th:href="@{/account/register}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>사원등록</p>
                             </a>

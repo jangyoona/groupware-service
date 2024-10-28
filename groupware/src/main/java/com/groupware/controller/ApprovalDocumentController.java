@@ -68,7 +68,7 @@ public class ApprovalDocumentController {
         model.addAttribute("approvalForm", approvalForm);
         model.addAttribute("employees", employee);
 
-        return "/pages/approval/approval-write";
+        return "pages/approval/approval-write";
     }
 
 
@@ -99,7 +99,7 @@ public class ApprovalDocumentController {
 
         approvalService.writeApproval(approval);
 
-        return "/pages/approval/approval-list";
+        return "pages/approval/approval-list";
     }
 
     @GetMapping(path = {"/approval-write-save"})
@@ -109,7 +109,7 @@ public class ApprovalDocumentController {
         approvalDetails(approvalDocumentNo, model);
         model.addAttribute("approvalForm", approvalForm);
 
-        return "/pages/approval/approval-write-save";
+        return "pages/approval/approval-write-save";
     }
 
     @PostMapping(path = {"/approval-write-save"})
@@ -139,7 +139,7 @@ public class ApprovalDocumentController {
         // update 가 아닌 insert 사용
         approvalService.updateApproval(approval);
 
-        return "/pages/approval/approval-list";
+        return "pages/approval/approval-list";
     }
 
     @GetMapping("/get-document")
@@ -165,7 +165,7 @@ public class ApprovalDocumentController {
 
         model.addAttribute("approvalForms", approvalForms);
 
-        return "/pages/approval/approval-list";
+        return "pages/approval/approval-list";
     }
 
     @GetMapping(path = {"/approval-content"})
@@ -192,7 +192,7 @@ public class ApprovalDocumentController {
         model.addAttribute("pager", pager);
         model.addAttribute("pageNo", pageNo);
         model.addAttribute("dataCount", dataCount);
-        return "/pages/approval/approval-content-module";
+        return "pages/approval/approval-content-module";
     }
 
     @GetMapping(path = {"/approval-line-write"})
@@ -207,7 +207,7 @@ public class ApprovalDocumentController {
         model.addAttribute("approvalForm", approvalForm);
         model.addAttribute("employees", employee);
 
-        return "/pages/approval/approval-line-write";
+        return "pages/approval/approval-line-write";
     }
 
     @PostMapping(path = {"/approval-line-write"})
@@ -268,7 +268,7 @@ public class ApprovalDocumentController {
         model.addAttribute("pager", pager);
         model.addAttribute("pageNo", pageNo);
         model.addAttribute("dataCount", dataCount);
-        return "/pages/approval/approval-content-module";
+        return "pages/approval/approval-content-module";
     }
 
 
@@ -277,7 +277,7 @@ public class ApprovalDocumentController {
 
         approvalDetails(approvalDocumentNo, model);
 
-        return "/pages/approval/approval-before-detail";
+        return "pages/approval/approval-before-detail";
 
     }
 
@@ -296,7 +296,7 @@ public class ApprovalDocumentController {
 
         approvalDetails(approvalDocumentNo, model);
 
-        return "/pages/approval/approval-after-detail";
+        return "pages/approval/approval-after-detail";
 
     }
 
@@ -306,7 +306,7 @@ public class ApprovalDocumentController {
 
         ApprovalFormDto approvalFrom = approvalService.findApprovalFormDetail(approvalFormNo);
         model.addAttribute("approvalFrom", approvalFrom);
-        return "/pages/approval/approval-form-detail";
+        return "pages/approval/approval-form-detail";
     }
 
     @PostMapping(path = {"approval-form-detail"})
@@ -322,7 +322,7 @@ public class ApprovalDocumentController {
 
         approvalDetails(approvalDocumentNo, model);
 
-        return "/pages/approval/approval-last-detail";
+        return "pages/approval/approval-last-detail";
 
     }
 
@@ -342,7 +342,7 @@ public class ApprovalDocumentController {
         model.addAttribute("approvalForm", approvalForm);
 
 
-        return "/pages/approval/approval-form-write";
+        return "pages/approval/approval-form-write";
     }
 
     @PostMapping(path = {"/approval-form-write"})
@@ -358,7 +358,7 @@ public class ApprovalDocumentController {
         List<ApprovalFormDto> approvalForms = approvalService.findApprovalForm();
 
         model.addAttribute("approvalForms", approvalForms);
-        return "/pages/approval/approval-form-list";
+        return "pages/approval/approval-form-list";
     }
 
     @PostMapping(path = {"approvalFormSearch"})
@@ -389,7 +389,7 @@ public class ApprovalDocumentController {
         model.addAttribute("pageNo", pageNo);
         model.addAttribute("dataCount", dataCount);
 
-        return "/pages/approval/approval-form-module";
+        return "pages/approval/approval-form-module";
     }
 
     @GetMapping(path = {"/approval-form-content"})
@@ -419,7 +419,7 @@ public class ApprovalDocumentController {
         model.addAttribute("pageNo", pageNo);
         model.addAttribute("dataCount", dataCount);
 
-        return "/pages/approval/approval-form-module";
+        return "pages/approval/approval-form-module";
     }
 
     //    결재 대기 문서함
@@ -430,7 +430,7 @@ public class ApprovalDocumentController {
 
         model.addAttribute("approvalForms", approvalForms);
 
-        return "/pages/approval/approval-waiting-list";
+        return "pages/approval/approval-waiting-list";
     }
 
     @GetMapping("/approval-waiting-content")
@@ -459,7 +459,7 @@ public class ApprovalDocumentController {
         model.addAttribute("pager", pager);
         model.addAttribute("pageNo", pageNo);
         model.addAttribute("dataCount", dataCount);
-        return "/pages/approval/approval-waiting-content-module";
+        return "pages/approval/approval-waiting-content-module";
     }
 
 
@@ -494,7 +494,7 @@ public class ApprovalDocumentController {
         model.addAttribute("pager", pager);
         model.addAttribute("pageNo", pageNo);
         model.addAttribute("dataCount", dataCount);
-        return "/pages/approval/approval-content-module";
+        return "pages/approval/approval-content-module";
     }
 
     // 결재 반려 또는 승인 권한 조건 검사
@@ -541,7 +541,7 @@ public class ApprovalDocumentController {
         model.addAttribute("approvers", approvers);
         model.addAttribute("authorityStatus", authorityStatus);
 
-        return "/pages/approval/approval-waiting-detail";
+        return "pages/approval/approval-waiting-detail";
     }
 
     @PostMapping(path = {"/approval-confirm"})
@@ -572,7 +572,7 @@ public class ApprovalDocumentController {
         approvalDetails(approvalDocumentNo, model);
         model.addAttribute("approverReject", approverReject);
 
-        return "/pages/approval/approval-reject-detail";
+        return "pages/approval/approval-reject-detail";
     }
 
     @PostMapping("/approval-reject-confirm")
@@ -595,7 +595,7 @@ public class ApprovalDocumentController {
         model.addAttribute("approvalForm", approvalForm);
         model.addAttribute("employees", employee);
 
-        return "/pages/approval/approval-write-test";
+        return "pages/approval/approval-write-test";
     }
 
     @GetMapping(path = {"/approval-line-list"})
@@ -604,7 +604,7 @@ public class ApprovalDocumentController {
         int empId = loginUser.getEmpId();
 
 
-        return "/pages/approval/approval-line-list";
+        return "pages/approval/approval-line-list";
 
     }
 
@@ -634,7 +634,7 @@ public class ApprovalDocumentController {
        model.addAttribute("pager", pager);
        model.addAttribute("pageNo", pageNo);
        model.addAttribute("dataCount", dataCount);
-       return "/pages/approval/approval-line-content-module";
+       return "pages/approval/approval-line-content-module";
 
     }
 
@@ -648,7 +648,7 @@ public class ApprovalDocumentController {
         model.addAttribute("approverSave",approverSave);
         model.addAttribute("approverTitle",approverTitle);
 
-        return "/pages/approval/approval-line-Detail";
+        return "pages/approval/approval-line-Detail";
         }
 
 

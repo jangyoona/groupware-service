@@ -86,7 +86,7 @@ public class MailController {
         model.addAttribute("pageNo", pageNo);
         model.addAttribute("currentType", type);
         // HTML 템플릿 반환
-        return "/mailbox/mail-list";
+        return "mailbox/mail-list";
 
     }
 
@@ -108,7 +108,7 @@ public class MailController {
             String[] emailArray = emails.split(","); // 콤마로 구분된 문자열을 배열로 변환
             model.addAttribute("emailArray", emailArray); // 모델에 이메일 배열 추가
         }
-        return "/mailbox/write";
+        return "mailbox/write";
     }
 
     @PostMapping(path = { "/write" })

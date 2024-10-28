@@ -37,7 +37,7 @@ public class CalendarController {
         // 모델에 개인 캘린더 정보 추가
         model.addAttribute("calendar", personalCalendar);
 
-        return "/modules/calendar";
+        return "modules/calendar";
     }
 
     //기존에 있던건 update, 새로운건 insert로 처리하려고했는데 진짜 하다가 너무 안되서 이렇게 바꿈

@@ -71,7 +71,7 @@ public class BoardController {
         model.addAttribute("pager", pager);
         model.addAttribute("pageNo", pageNo);
         // HTML 템플릿 반환
-        return "/board/board-list";
+        return "board/board-list";
 
     }
 
@@ -130,7 +130,7 @@ public class BoardController {
             attributes.addFlashAttribute("alertMessage", "권한 등급이 낮습니다");
             return "redirect:/board/list"; // 4보다 작으면 /board/list로 리다이렉트
         }
-        return "/board/write"; // 조건을 만족하지 않으면 write 페이지로 이동
+        return "board/write"; // 조건을 만족하지 않으면 write 페이지로 이동
     }
 
     @PostMapping(path = { "/write" })

@@ -36,7 +36,7 @@ public class AttendanceController {
 
         EmployeeDto loginUser = (EmployeeDto) session.getAttribute("loginUser");
         model.addAttribute("loginUser", loginUser);
-        return "/modules/attendance-check-in";
+        return "modules/attendance-check-in";
     }
 
     @PostMapping(path = "/modules/attendance-check-in", produces = "text/plain;charset=utf-8")
@@ -76,7 +76,7 @@ public class AttendanceController {
         EmployeeDto loginUser = (EmployeeDto) session.getAttribute("loginUser");
         model.addAttribute("loginUser", loginUser);
 
-        return "/modules/attendance-check-out";
+        return "modules/attendance-check-out";
     }
 
     @PostMapping(path = "/modules/attendance-check-out", produces = "text/plain;charset=utf-8")
@@ -123,7 +123,7 @@ public class AttendanceController {
         model.addAttribute("allDepartment", allDepartment);
 
 
-        return "/pages/attendance/attendance-list";
+        return "pages/attendance/attendance-list";
     }
 
     @PostMapping(path = "/pages/attendance/attendance-list", produces = "text/plain;charset=utf-8")
@@ -161,7 +161,7 @@ public class AttendanceController {
         List<AttendanceDto> allAttendance = attdService.findAttendanceRequestModify();
         model.addAttribute("allAttendance", allAttendance);
 
-        return "/pages/attendance/attendance-edit";
+        return "pages/attendance/attendance-edit";
     }
 
     @PostMapping(path = "/pages/attendance/attendance-edit", produces = "text/plain;charset=utf-8")
@@ -213,7 +213,7 @@ public class AttendanceController {
 
         model.addAttribute("attendance", attendance);
 
-        return "/pages/attendance/attendance-test";
+        return "pages/attendance/attendance-test";
     }
 
     @GetMapping(path = "/search/attendance")
@@ -228,13 +228,13 @@ public class AttendanceController {
 
     @GetMapping(path = "/modules/attendacne-button")
     public String showAttendanceButton() {
-        return "/modules/attendance-button";
+        return "modules/attendance-button";
     }
 
 
     @GetMapping(path = "/pages/attendance/alert")
     public String alert() {
-        return "/pages/attendance/alert";
+        return "pages/attendance/alert";
     }
 
     @GetMapping(path = "/modules/organization")
@@ -243,7 +243,7 @@ public class AttendanceController {
         List<EmployeeDto> allEmployee = attdMapper.findAllEmployeeInfo();
         model.addAttribute("allEmployee", allEmployee);
 
-        return "/modules/organization";
+        return "modules/organization";
     }
     @GetMapping(path = "/modules/organization2")
     public String showOrganization2(Model model) {
@@ -251,6 +251,6 @@ public class AttendanceController {
         List<EmployeeDto> allEmployee = attdMapper.findAllEmployeeInfo();
         model.addAttribute("allEmployee", allEmployee);
 
-        return "/modules/organization2";
+        return "modules/organization2";
     }
 }

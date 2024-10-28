@@ -164,14 +164,12 @@ public class MyPageController {
 //            String dir = application.getRealPath("/employee-photo");
 //            String saveName = dir + "/" + employeeDetail.getEmpId() + ".jpg";
 
-            File dir = new File(employeePhotoDir);
-            String saveName = dir + String.valueOf(employeeDetail.getEmpId()) + ".jpg";
+            String saveName = employeePhotoDir + employeeDetail.getEmpId() + ".jpg";
             File file = new File(saveName);
 
             try {
-                boolean deleted = file.delete();
-                File newFile = new File(saveName);
-                attach.transferTo(newFile);
+                file.delete();
+                attach.transferTo(file);
                 return "success";
             } catch (IOException e){
                 e.printStackTrace(); // Log the exception

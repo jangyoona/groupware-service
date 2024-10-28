@@ -33,7 +33,7 @@ public class MinigameController {
 
         System.out.println(allMinigameInfo);
 
-        return "/modules/minigame";
+        return "modules/minigame";
     }
 
     @PostMapping(path = "/insert-or-update-score")
