@@ -50,7 +50,7 @@
 <br>
 <br>
 
-![2차 아키텍처 drawio](https://github.com/user-attachments/assets/aa6a3767-d007-4227-8d22-c2ccb69e8f41)
+![2차 아키텍처 drawio](https://github.com/user-attachments/assets/85d980a5-f999-48ef-bcd1-8832e486d7ce)
 
 <br>
 <br>
