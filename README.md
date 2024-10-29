@@ -8,7 +8,7 @@
 <br>
 <br>
 
-<!-- ## ✅ 배포 사이트 👉 <a href="http://152.67.211.254:8080/" target="_blank">Together</a> -->
+## ✅ 배포 사이트 👉 <a href="http://54.180.149.44:8081/" target="_blank">GroupWare</a>
 
 <br>
 <br>
