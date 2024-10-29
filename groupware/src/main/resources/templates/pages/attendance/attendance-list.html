@@ -62,7 +62,7 @@
                                     <h3 class="card-title">부서별 금일 근태</h3>
                                     <div class="card-tools">
                                         <form id="searchForm" method="GET">
-                                            <input type="hidden" name="deptNo" th:value="${#ctx.session.loginUser.deptNo}">
+                                            <input type="hidden" name="loginUserDeptNo" th:value="${#ctx.session.loginUser.deptNo}">
                                             <div class="input-group input-group-sm align-items-center d-flex" style="width: 400px;">
                                                 <span class="align-middle" style="font-weight: bold;">부서 선택 :</span>&nbsp;&nbsp;
                                                 <select id="deptSelect" name="deptNo" class="form-control float-left">

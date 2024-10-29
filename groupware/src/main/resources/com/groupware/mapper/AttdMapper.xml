@@ -207,7 +207,7 @@
 
         WHERE
         e.dept_no = #{ deptNo } AND
-        a.attd_date = CURDATE()
+        DATE(a.attd_date) = CURDATE()
 
         ORDER BY p.position_no DESC
 
@@ -425,7 +425,7 @@
         WHERE
         e.dept_no = #{ deptNo }
         AND e.emp_name LIKE CONCAT('%', #{empName}, '%')
-        AND attd_date = CURDATE()
+        AND DATE(a.attd_date) = CURDATE()
 
         ORDER BY e.position_no DESC
 
