@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/6485a0c5-bb37-47cc-8626-83c4d1ea772f)
 ## 목차
  > 01. 프로젝트 소개
  > 02. 사용 기술
