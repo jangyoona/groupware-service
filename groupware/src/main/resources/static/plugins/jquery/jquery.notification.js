@@ -37,7 +37,8 @@ $(function () {
 
         // empId가 유효한지 확인
         if (empId > 0) {
-            socket = new WebSocket(`ws://localhost:8081/ws?empId=${empId}`);
+//            socket = new WebSocket(`ws://localhost:8081/ws?empId=${empId}`);
+            socket = new WebSocket(`ws://${location.host}/ws?empId=${empId}`);
             // WebSocket 관련 코드 추가
         } else {
             console.error("유효하지 않은 empId입니다.");

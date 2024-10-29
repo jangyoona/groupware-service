@@ -303,7 +303,8 @@
 
         WHERE
         a.emp_id = #{ empId } AND
-        a.attd_date = CURDATE()
+<!--        a.attd_date = CURDATE()-->
+        DATE(a.attd_date) = CURDATE()
 
         ORDER BY a.attd_date DESC
 

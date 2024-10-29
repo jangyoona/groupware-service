@@ -110,9 +110,9 @@
                     </div>
                     <div th:if="${todayAttendance != null and #dates.format(todayAttendance.attdOut, 'yyyy-MM-dd HH:mm:ss') == '2000-01-01 00:00:00' and #dates.format(todayAttendance.attdIn, 'yyyy-MM-dd HH:mm:ss') != '2000-01-01 00:00:00'}">
                         <div id="button-container">
-                            <img id="after6pm-left" src="../dist/img/alarm.gif" alt="After 6pm Left">
+                            <img id="after6pm-left" src="/dist/img/alarm.gif" alt="After 6pm Left">
                             <span th:replace="~{modules/attendance-check-out}"></span>
-                            <img id="after6pm-right" src="../dist/img/alarm.gif" alt="After 6pm Right">
+                            <img id="after6pm-right" src="/dist/img/alarm.gif" alt="After 6pm Right">
                         </div>
                     </div>
                     <div th:if="${todayAttendance != null and (todayAttendance.attdStatus != null and (#dates.format(todayAttendance.attdOut, 'yyyy-MM-dd HH:mm:ss') != '2000-01-01 00:00:00' and #dates.format(todayAttendance.attdIn, 'yyyy-MM-dd HH:mm:ss') != '2000-01-01 00:00:00')) or (todayAttendance != null and todayAttendance.attdStatus == '휴가')}">
