@@ -52,7 +52,7 @@
 <br>
 <br>
 
-![2차 아키텍처 drawio](https://github.com/user-attachments/assets/85d980a5-f999-48ef-bcd1-8832e486d7ce)
+![2차 아키텍처 drawio](https://github.com/user-attachments/assets/2246f03c-34ec-4e4f-9763-8b00939d4405)
 
 <br>
 <br>
