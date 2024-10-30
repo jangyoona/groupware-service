@@ -397,10 +397,11 @@ $(function () {
   $('a.my-memo-btn#vert-tabs-profile-tab').on('shown.bs.tab', function(e){
         refreshCalendar();
   });
+
+  const empId = /*[[${session.loginUser.empId}]]*/ 0;
+  initializeWebSocket(empId);
+
 });
-
-
-
 </script>
 
   <!-- ./wrapper -->
@@ -445,6 +446,5 @@ $(function () {
       </div>
     </div>
   </div>
-  empId = /*[[${session.loginUser.empId}]]*/ 0;initializeWebSocket(empId);
 </body>
 </html>

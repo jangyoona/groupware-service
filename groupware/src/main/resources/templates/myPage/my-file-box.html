@@ -13,7 +13,10 @@
     <tbody>
     <tr th:each="file, start : ${ userFileList }">
         <td th:text="|${ start.count }|"></td>
-        <td style="width=30%;"><a th:href="@{userFile/download(fileNo=${file.fileNo})}" th:text="${ file.userFileName }" class="userFileName"></a></td>
+        <td style="width=30%;">
+            <img src="" class="file-icon" alt="icon" style="width:35px; margin-right: 10px;">
+            <a th:href="@{userFile/download(fileNo=${file.fileNo})}" th:text="${ file.userFileName }" class="userFileName" th:data-userfilename="${file.userFileName}" style="display: inline-block;"></a>
+        </td>
         <td th:text="${ file.note }" style="width=25%;"></td>
         <td th:text="${ #dates.format(file.saveDate, 'yyyy-MM-dd HH:mm:ss') }"></td>
         <td th:text="${ file.fileSort }"></td>

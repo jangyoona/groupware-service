@@ -222,6 +222,7 @@ public class MyPageController {
         String queryString = req.getQueryString();
 
         int start = pageSize * (pageNo - 1);
+        start = Math.max(start, 0); // start가 음수일 경우 0으로 보정
 
         ProjectPager pager = new ProjectPager(dataCount, pageNo, pageSize, pagerSize, linkUrl, queryString);
         List<LoginAttemptDto> loginAttempts = myPageService.getUserLoginAttemptLog(employee.getEmpId(), start, keyword, startDate, endDate);
@@ -262,6 +263,7 @@ public class MyPageController {
         String queryString = req.getQueryString();
 
         int start = pageSize * (pageNo - 1);
+        start = Math.max(start, 0); // start가 음수일 경우 0으로 보정
 
         ProjectPager pager = new ProjectPager(dataCount, pageNo, pageSize, pagerSize, linkUrl, queryString);
         List<AttendanceDto> empAttendance = myPageService.findAttendanceByEmpId(employee.getEmpId(), start, keyword, startDate, endDate);
@@ -292,6 +294,7 @@ public class MyPageController {
         String queryString = req.getQueryString();
 
         int start = pageSize * (pageNo - 1);
+        start = Math.max(start, 0); // start가 음수일 경우 0으로 보정
 
         ProjectPager pager = new ProjectPager(dataCount, pageNo, pageSize, pagerSize, linkUrl, queryString);
         List<UserFileBoxDto> userFileList = myPageService.getUserFileList(employee.getEmpId(), start, keyword);
@@ -404,6 +407,7 @@ public class MyPageController {
         String queryString = req.getQueryString();
 
         int start = pageSize * (pageNo - 1);
+        start = Math.max(start, 0); // start가 음수일 경우 0으로 보정
 
         ProjectPager pager = new ProjectPager(dataCount, pageNo, pageSize, pagerSize, linkUrl, queryString);
 //        List<UserBookmarkDto> bookmarkList = myPageService.getUserBookmarkByEmpId(employee.getEmpId(), start, option, keyword);

@@ -394,8 +394,50 @@ $(function () {
           $('.my-fileBox-container').load('my-file-box', function(){
               truncateUserFileName();
               $('.file-search-keyword').val('all');
+              loadFileIcon();
           });
     });
+
+
+    // 파일함 확장자 아이콘 추가
+    function loadFileIcon() {
+        $('.my-fileBox-container .userFileName').each(function() {
+            const fileName = $(this).data('userfilename');
+            const iconPath = getFileIcon(fileName);
+            $(this).prev('.my-fileBox-container .file-icon').attr('src', iconPath);
+        });
+    }
+
+    // 파일함 확장자 구분
+    function getFileIcon(fileName) {
+        const extension = fileName.split('.').pop().toLowerCase();
+
+        const iconPaths = {
+            avi: '/fileicon/avi.png',
+            css: '/fileicon/css.png',
+            doc: '/fileicon/doc.png',
+            docx: '/fileicon/doc.png',
+            gif: '/fileicon/gif.png',
+            html: '/fileicon/html.png',
+            jpg: '/fileicon/jpg.png',
+            jpeg: '/fileicon/jpg.png',
+            js: '/fileicon/js.png',
+            mov: '/fileicon/mov.png',
+            mp3: '/fileicon/mp3.png',
+            mp4: '/fileicon/mp3.png',
+            pdf: '/fileicon/pdf.png',
+            png: '/fileicon/png.png',
+            ppt: '/fileicon/ppt.png',
+            psd: '/fileicon/psd.png',
+            txt: '/fileicon/txt.png',
+            xls: '/fileicon/xls.png',
+            xlsx: '/fileicon/xls.png',
+            xml: '/fileicon/xml.png',
+            zip: '/fileicon/zip.png'
+        };
+
+        return iconPaths[extension] || '/fileicon/default.png';
+    }
 
     // userFileName 25자 이상 ...으로 대체
     function truncateUserFileName() {
@@ -463,6 +505,7 @@ $(function () {
                           alert('파일 등록이 완료되었습니다');
                           $('.my-fileBox-container').load('my-file-box', function(){
                               truncateUserFileName();
+                              loadFileIcon();
                           });
                       } else {
                           alert('파일 등록에 실패하였습니다')
@@ -488,6 +531,7 @@ $(function () {
 
             $('.my-fileBox-container').load('my-file-box?pageNo=' + pageNo + '&keyword=' + fileKeyword, function(){
                    truncateUserFileName();
+                   loadFileIcon();
             });
         });
 
@@ -500,6 +544,7 @@ $(function () {
 
              $('.my-fileBox-container').load('my-file-box?pageNo=' + 1 + '&keyword=' + fileKeyword, function(){
                     truncateUserFileName();
+                    loadFileIcon();
              });
         });
 
@@ -513,6 +558,7 @@ $(function () {
                                 alert('삭제 완료되었습니다');
                                 $('.my-fileBox-container').load('my-file-box', function(){
                                     truncateUserFileName();
+                                    loadFileIcon();
                                 });
                             } else {
                                 alert('파일 삭제에 실패하였습니다');
