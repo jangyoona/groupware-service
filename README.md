@@ -175,11 +175,14 @@
 > * ### 파일 등록/수정/삭제 및 메모 등록 기능
 
 <br>
+<br>
 
-| ![image](https://github.com/user-attachments/assets/8a63afa6-d4f1-48bb-9452-9bd4a67b2b86) |
-| :--: |
-| <h3>파일명 클릭시 다운로드 / 페이징 처리</h3> |
+![파일보관함update](https://github.com/user-attachments/assets/3ffb09b9-8b79-45a5-b70c-5d053f61430d)
+<h3>파일명 클릭시 다운로드 / 페이징 처리</h3>
 
+> * 파일함 update!! 확장자에 따른 icon 추가 .10/30
+
+<br>
 <br>
 <br>
 
