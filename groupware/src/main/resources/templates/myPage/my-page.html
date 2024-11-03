@@ -226,7 +226,7 @@
                     </div>
 
                     <div class="card-tools search-tool">
-                      <div class="input-group input-group-sm" style="width: 150px;">
+                      <div class="input-group input-group-sm"> <!-- style="width: 150px;" -->
                         <!--                    <input type="text" name="table_search" class="form-control float-right" placeholder="이름으로 검색">-->
                         <select class="form-control float-right attd-search-keyword" name="attd-search-keyword" th:value="${ attdKeyword }" style="height: 2.3rem;">
                           <option selected value="all">상태(전체)</option>
@@ -237,6 +237,10 @@
                             <i class="fas fa-search"></i>
                           </button>
                         </div>
+                        <!-- 근태내역 print -->
+                        <button type="button" class="btn btn-default btn-print" style="margin-left: 2rem;">
+                          <i class="fas fa-print"></i> 출력
+                        </button>
                       </div>
                     </div>
                   </div>
