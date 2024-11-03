@@ -138,7 +138,8 @@
         ORDER BY
             attdDate DESC
         LIMIT
-            #{ start }, 5
+<!--            #{ start }, 5-->
+            #{ start }, #{ end }
     </select>
 
     <select id="findLoginAttemptsById" parameterType="hashmap" resultType="LoginAttemptDto">

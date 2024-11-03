@@ -22,7 +22,7 @@ public interface MyPageService {
 
     int getUserAttendanceCount(int empId, String keyword, String startDate, String endDate);
 
-    List<AttendanceDto> findAttendanceByEmpId(int empId, int start, String keyword, String startDate, String endDate);
+    List<AttendanceDto> findAttendanceByEmpId(int empId, int start, int end, String keyword, String startDate, String endDate);
 
     void saveUserFile(UserFileBoxDto userFile);
 

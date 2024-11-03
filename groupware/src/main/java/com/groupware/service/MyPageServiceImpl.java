@@ -86,10 +86,11 @@ public class MyPageServiceImpl implements MyPageService {
     }
 
     @Override
-    public List<AttendanceDto> findAttendanceByEmpId(int empId, int start, String keyword, String startDate, String endDate) {
+    public List<AttendanceDto> findAttendanceByEmpId(int empId, int start, int end, String keyword, String startDate, String endDate) {
         Map<String, Object> param = new HashMap<>();
         param.put("empId", empId);
         param.put("start", start);
+        param.put("end", end);
         param.put("keyword", keyword);
         param.put("startDate", startDate);
         param.put("endDate", endDate);

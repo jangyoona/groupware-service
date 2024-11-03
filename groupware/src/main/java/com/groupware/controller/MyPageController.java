@@ -242,6 +242,8 @@ public class MyPageController {
 //    public String myAttendanceForm(@RequestParam(required = false) Integer pageNum, HttpSession session, Model model) {
     public String myAttendanceForm(@RequestParam(name = "pageNo", defaultValue = "1") int pageNo,
                                    @RequestParam(name = "keyword", defaultValue = "all") String keyword,
+                                   @RequestParam(name = "pageSize", defaultValue = "5") int pageSize, // print all
+                                   @RequestParam(name = "end", defaultValue = "5") int end, // print all
                                    String startDate, String endDate,
                                    HttpSession session, Model model, HttpServletRequest req) {
         if(startDate == null || endDate == null) {
@@ -255,7 +257,7 @@ public class MyPageController {
 
         EmployeeDto employee = (EmployeeDto) session.getAttribute("loginUser");
         // 페이징 처리
-        int pageSize = 5;
+//        int pageSize = 5;
         int pagerSize = 5;
         int dataCount = myPageService.getUserAttendanceCount(employee.getEmpId(), keyword, startDate, endDate);
         String uri = req.getRequestURI();
@@ -266,7 +268,7 @@ public class MyPageController {
         start = Math.max(start, 0); // start가 음수일 경우 0으로 보정
 
         ProjectPager pager = new ProjectPager(dataCount, pageNo, pageSize, pagerSize, linkUrl, queryString);
-        List<AttendanceDto> empAttendance = myPageService.findAttendanceByEmpId(employee.getEmpId(), start, keyword, startDate, endDate);
+        List<AttendanceDto> empAttendance = myPageService.findAttendanceByEmpId(employee.getEmpId(), start, end, keyword, startDate, endDate);
 
         model.addAttribute("empAttendance", empAttendance);
         model.addAttribute("pager", pager);

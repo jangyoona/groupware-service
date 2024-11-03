@@ -633,36 +633,41 @@ $(function () {
 
         // 근태현황 프린트
         $('.btn-print').on('click', function() {
-            // 인쇄할 영역 선택
-            const $printArea = $('.attendance-list-container .attd-printable').clone();
+            let attdKeyword = $('.attd-search-keyword > option:selected').val();
+            let startDate = $('#attd-start-date').val();
+            let endDate = $('#attd-end-date').val();
 
-            // 특정 버튼 제외
-            $printArea.find('.request-modify-button').remove();
+            $('.attendance-list-container').load('my-attendance?pageNo=' + 1 + '&keyword=' + attdKeyword +
+                                                 '&startDate=' + startDate + '&endDate=' + endDate +
+                                                 '&pageSize=' + 9999 + '&end=' + 9999, function() {
+                                                 // 출력 기능 추가로 pageSize + end defaultValue 지정해서 넘김
+                // 인쇄할 영역 선택
+                const $printArea = $('.attendance-list-container .attd-printable').clone();
 
-            // 인쇄할 HTML 가져오기
-            const printContents = $printArea.wrap('<div/>').parent().html();
+                // 복사본에서 수정요청 버튼 삭제
+                $printArea.find('.request-modify-button').remove();
 
-            // 새로운 윈도우 열기
-            const printWindow = window.open('', '', 'width=800,height=800');
-            printWindow.document.write('<html><head><title>근태현황 출력</title>');
+                // 인쇄 내용을 담은 임시 div 생성
+                const $tempPrintDiv = $('<div></div>').append($printArea);
 
-            // 현재 페이지의 모든 CSS 링크 복사
-            $('link[rel="stylesheet"]').each(function() {
-                printWindow.document.write('<link rel="stylesheet" type="text/css" href="' + $(this).attr('href') + '">');
+                // 인쇄용 팝업 show
+                const printWindow = window.open('', '', 'width=800,height=800');
+                printWindow.document.write('<html><head><title>근태현황 출력</title>');
+
+                // 현재 페이지의 모든 CSS 링크 복사
+                $('link[rel="stylesheet"]').each(function() {
+                    printWindow.document.write('<link rel="stylesheet" type="text/css" href="' + $(this).attr('href') + '">');
+                });
+
+                printWindow.document.write('</head><body>');
+                printWindow.document.write($tempPrintDiv.html());
+                printWindow.document.write('</body></html>');
+
+                // 문서 작성을 종료하고 인쇄 대화상자 열기
+                printWindow.document.close();
+                printWindow.print();
             });
 
-            printWindow.document.write('</head><body>');
-            printWindow.document.write(printContents);
-            printWindow.document.write('</body></html>');
-
-            // 인쇄 대화상자 열기
-            printWindow.document.close(); // 문서 작성을 종료
-
-            // 인쇄 후 팝업을 닫기 위한 타이머 설정
-            setTimeout(function() {
-                printWindow.print();
-                printWindow.close(); // 인쇄 후 윈도우 닫기
-            }, 500); // 0.5초 대기
         });
 
 
