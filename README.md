@@ -206,6 +206,14 @@
 <br>
 <br>
 <br>
+
+> * update!! 근태내역 프린트 기능 추가 .11/03
+
+![image](https://github.com/user-attachments/assets/3a8da06e-a3f2-43ae-82dc-81dc8b7417af)
+
+<br>
+<br>
+<br>
 <hr>
 
 # 5️⃣ 로그인 조회
